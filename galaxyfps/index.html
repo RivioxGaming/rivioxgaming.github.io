@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GalaxyFPS</title>
+    <link rel="stylesheet" href="galaxyfps.css">
+    <link rel="stylesheet" href="assets/galaxyfps.css">
+    <meta name="description" content="FPS Booster written in python">
+    <script defer data-domain="riviox.is-a.dev" src="https://analytics.is-a.dev/js/script.js"></script>
+    <meta name="keywords" content="FPS, BOOST">
+    <meta name="author" content=".riviox">
+    <style>
+        #ascii {
+    color: rgba(180, 0, 0, 0.842);
+}
+
+.centerblock {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(27, 27, 27);
+    font-family: monospace;
+}
+
+.pics {
+    display: flex;
+    align-items: center;
+}
+
+.pics img {
+    border-radius: 15px;
+    border: 7px;
+    border-color: rgb(39, 39, 39);
+    border-style: double;
+    margin-left: 15px;
+}
+
+.textpic {
+    color: white;
+    font-size: 4vh;
+    margin-left: 1vw;
+    height: 480px;
+}
+
+#version {
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#fancy {
+    background-color: black;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+#fancy a {
+    color: white;
+    text-decoration: none;
+}
+
+#fancy a:hover {
+    color: rgb(100, 100, 100);
+    text-decoration: none;
+}
+    </style>
+</head>
+<body>
+    <main>
+        <div class="centerblock">
+            <div id="ascii"><pre>
+▄████  ▄▄▄       ██▓    ▄▄▄      ▒██   ██▒▓██   ██▓     █████▒██▓███    ██████ 
+██▒ ▀█▒▒████▄    ▓██▒   ▒████▄    ▒▒ █ █ ▒░ ▒██  ██▒   ▓██   ▒▓██░  ██▒▒██    ▒ 
+▒██░▄▄▄░▒██  ▀█▄  ▒██░   ▒██  ▀█▄  ░░  █   ░  ▒██ ██░   ▒████ ░▓██░ ██▓▒░ ▓██▄   
+░▓█  ██▓░██▄▄▄▄██ ▒██░   ░██▄▄▄▄██  ░ █ █ ▒   ░ ▐██▓░   ░▓█▒  ░▒██▄█▓▒ ▒  ▒   ██▒
+░▒▓███▀▒ ▓█   ▓██▒░██████▒▓█   ▓██▒▒██▒ ▒██▒  ░ ██▒▓░   ░▒█░   ▒██▒ ░  ░▒██████▒▒
+░▒   ▒  ▒▒   ▓▒█░░ ▒░▓  ░▒▒   ▓▒█░▒▒ ░ ░▓ ░   ██▒▒▒     ▒ ░   ▒▓▒░ ░  ░▒ ▒▓▒ ▒ ░
+░   ░   ▒   ▒▒ ░░ ░ ▒  ░ ▒   ▒▒ ░░░   ░▒ ░ ▓██ ░▒░     ░     ░▒ ░     ░ ░▒  ░ ░
+░ ░   ░   ░   ▒     ░ ░    ░   ▒    ░    ░   ▒ ▒ ░░      ░ ░   ░░       ░  ░  ░  
+░       ░  ░    ░  ░     ░  ░ ░    ░   ░ ░                              ░  
+░ ░                                 
+                
+            </pre></div>
+        </div>
+        <div class="pics">
+            <!-- <img src="pics/admin.png"> -->
+            <img src="pics/ui.png">
+            <span class="textpic">FPS Booster written in python.<br>Latest version: <span id="version"></span><br>Get it from <span id="fancy"><a href="https://github.com/RivioxGaming/GalaxyFPS">GitHub</a></span>
+        </div>
+    </main>
+    <script>
+        fetch('https://raw.githubusercontent.com/RivioxGaming/GalaxyFPS/main/version')
+            .then(response => response.text())
+            .then(ver => {
+                document.getElementById('version').innerText = ver;
+            })
+            .catch(error => {
+                console.log('Wystąpił błąd:', error);
+            });
+    </script>
+</body>
+</html>

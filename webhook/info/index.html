@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webhook Info</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .form {
+            width: 100%;
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #a8a8a8;
+        }
+
+        input[type="text"],
+        textarea,
+        input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            background-color: rgba(58, 58, 58, 0.8);
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .output {
+            margin-top: 20px;
+            padding: 10px;
+            max-height: 150px;
+            overflow: auto;
+            background-color: #36393f;
+            border-radius: 5px;
+            border: 1px solid #2f3136;
+            color: #ffffff;
+            white-space: pre-wrap;
+            width: 100%;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #a8a8a8;
+        }
+
+        .back {
+            background-color: #ffa600;
+            color: #ffffff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .back:hover {
+            background-color: #cf8700;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="form">
+        <h1>Webhook Info</h1>
+        <label for="webhook-url">Webhook URL:</label>
+        <input type="text" id="webhook-url" placeholder="Webhook URL">
+
+        <div class="buttons">
+            <button type="button" class="info" onclick="getWebhookInfo()">Get webhook info</button>
+            <button type="button" class="back"><a href="/index.html">Back</a></button>
+        </div>
+    </div>
+    <div class="output" id="webhook-output"></div>
+</div>
+
+<script>
+    function getWebhookInfo() {
+        var url = document.getElementById("webhook-url").value;
+        var request = new XMLHttpRequest();
+        request.open("GET", url);
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    document.getElementById("webhook-output").innerText = "Webhook Info:\n\n" + formatJson(request.responseText);
+                } else {
+                    document.getElementById("webhook-output").innerText = "Error getting webhook info. Make sure the URL is correct.";
+                }
+            }
+        };
+        request.send();
+    }
+
+    function formatJson(jsonString) {
+        try {
+            var jsonObject = JSON.parse(jsonString);
+            return JSON.stringify(jsonObject, null, 2);
+        } catch (error) {
+            return jsonString;
+        }
+    }
+</script>
+</body>
+
+<footer>Made by .riviox</footer>
+</html>

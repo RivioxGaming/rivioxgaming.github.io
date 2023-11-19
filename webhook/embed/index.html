@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discord Toolkit</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #1a1a1a;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container, .preview-container {
+      flex: 1;
+      padding: 10px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      color: #a8a8a8;
+    }
+
+    input[type="text"],
+    textarea,
+    input[type="color"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      background-color: rgba(58, 58, 58, 0.8);
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #ffffff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    #avatarPreview {
+      max-width: 100px;
+      max-height: 100px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #a8a8a8;
+    }
+
+    #messagePreview {
+      margin-top: 20px;
+    }
+
+    #embedPreview {
+      padding: 10px;
+      background-color: #36393f;
+      border-radius: 5px;
+      position: relative;
+      margin-left: 3px;
+      border: 1px solid #2f3136;
+    }
+
+    #embedColorPreview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px; 
+      height: 100%; 
+      border-radius: 2px 0px 0 2px;
+      background-color: #969696;
+    }
+
+    #embedTitlePreview {
+      color: #ffffff;
+      font-weight: bold;
+      margin-bottom: 5px;
+      margin-left: 5px;
+    }
+
+    #embedDescriptionPreview {
+      color: #b9bbbe;
+      font-size: 14px;
+      margin-left: 5px;
+    }
+
+    #embedPreview::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #2f3136; /* Line separating title from content */
+    }
+
+    /* Additional styling for better separation of content from title */
+    #embedDescriptionPreview::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #2f3136;
+    }
+
+    #embedDescriptionPreview::after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: #2f3136;
+    }
+
+    .back {
+      background-color: #ffa600;
+      color: #ffffff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back:hover {
+      background-color: #cf8700;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    #textpreview {
+      font-size: medium;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <h2>Webhook Embed</h2>
+      <form id="discordWebhookForm">
+        <label for="webhookURL">Discord Webhook URL:</label>
+        <input type="text" id="webhookURL" required>
+
+        <label for="username">Username:</label>
+        <input type="text" id="username" required>
+
+        <label for="message">Message Content:</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <label for="embedTitle">Embed Title:</label>
+        <input type="text" id="embedTitle">
+
+        <label for="embedDescription">Embed Description:</label>
+        <textarea id="embedDescription" rows="4"></textarea>
+
+        <label for="embedColor">Embed Color:</label>
+        <input type="color" id="embedColor" value="#969696">
+
+        <label for="avatar">Avatar URL (optional):</label>
+        <input type="text" id="avatar" placeholder="https://example.com/avatar.png">
+
+        <button type="submit">Send</button>
+				<button type="button" class="back"><a href="/index.html">Back</a></button>
+      </form>
+    </div>
+
+    <div class="preview-container">
+      <div id="messagePreview">
+      <h3>Message Preview:</h3>
+        <div id="textpreview"></div>
+        <div id="embedPreview">
+          <div id="embedColorPreview"></div>
+          <h4 id="embedTitlePreview"></h4>
+          <p id="embedDescriptionPreview"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Made by .riviox
+  </div>
+
+  <script>
+    document.getElementById("discordWebhookForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const webhookURL = document.getElementById("webhookURL").value;
+      const username = document.getElementById("username").value;
+      const message = document.getElementById("message").value;
+      const avatarURL = document.getElementById("avatar").value;
+
+      const embedTitle = document.getElementById("embedTitle").value;
+      const embedDescription = document.getElementById("embedDescription").value;
+      const embedColor = document.getElementById("embedColor").value;
+
+      const payload = {
+        username: username,
+        content: message,
+        avatar_url: avatarURL,
+        embeds: [
+          {
+            title: embedTitle,
+            description: embedDescription,
+            color: parseInt(embedColor.replace("#", ""), 16) || 0,
+          }
+        ]
+      };
+
+      fetch(webhookURL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("An error occurred while sending the message.");
+        }
+        alert("Message has been sent!");
+      })
+      .catch(error => {
+        alert(error.message);
+      });
+    });
+
+    const avatarInput = document.getElementById("avatar");
+    const avatarPreview = document.getElementById("avatarPreview");
+
+    avatarInput.addEventListener("input", function(event) {
+      const avatarURL = event.target.value.trim();
+      avatarPreview.src = avatarURL;
+    });
+
+    document.getElementById("embedTitle").addEventListener("input", function(event) {
+      updateEmbedPreview();
+    });
+    
+    document.getElementById("message").addEventListener("input", function(event) {
+      updateEmbedPreview();
+    });
+
+    document.getElementById("embedDescription").addEventListener("input", function(event) {
+      updateEmbedPreview();
+    });
+
+    document.getElementById("embedColor").addEventListener("input", function(event) {
+      updateEmbedPreview();
+    });
+
+    function updateEmbedPreview() {
+      const embedTitle = document.getElementById("embedTitle").value;
+      const embedDescription = document.getElementById("embedDescription").value;
+      const embedColor = document.getElementById("embedColor").value;
+      const message = document.getElementById("message").value;
+
+      const messagePreview = document.getElementById("textpreview");
+      const embedTitlePreview = document.getElementById("embedTitlePreview");
+      const embedDescriptionPreview = document.getElementById("embedDescriptionPreview");
+      const embedColorPreview = document.getElementById("embedColorPreview");
+      const embedPreview = document.getElementById("embedPreview");
+
+      messagePreview.innerText = message;
+      embedTitlePreview.innerText = embedTitle;
+      embedTitlePreview.style.color = "#ffffff";
+      embedDescriptionPreview.innerText = embedDescription;
+      embedDescriptionPreview.style.color = "#ffffff";
+
+      embedColorPreview.style.backgroundColor = embedColor;
+    }
+  </script>
+</body>
+</html>
