@@ -65,7 +65,6 @@ async function fetchDiscordInfo() {
         const response = await fetch(discordApiUrl);
         const data = await response.json();
 
-        // Update HTML content with Discord information
         document.getElementById('discord-tag').innerText = `${data.tag}`;
         document.getElementById('discord-avatar').src = data.avatar.link;
         document.getElementById('discord-banner').src = data.banner.link;
