@@ -1,94 +1,29 @@
-<!--
-    Made by .riviox
-    License: GNU GPL v3.0
-    Hosting: GitHub Pages
-    Domain: is-a.dev 
--->
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta title=".riviox's official website">
-    <title>.riviox</title>
-    <style>
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
-
-        #container {
-            text-align: center;
-            background-color: #242424;
-            padding: 20px;
-            border-radius: 15px;
-            margin: 20px;
-        }
-
-        #avatar {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            margin-bottom: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            background-color: #3d3d3d;
-            padding: 8px 12px;
-            border-radius: 5px;
-            color: #ffffff;
-            transition: background-color 0.3s;
-        }
-
-        a:hover {
-            background-color: #515beb;
-        }
-
-        h1 {
-            margin-top: 0;
-            font-size: 24px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            #container {
-                width: 90vw;
-            }
-            
-            #avatar {
-                width: 100%;
-                height: auto;
-            }
-        }
-
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>riviox - About Me</title>
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body>
 
-    <div id="container">
-        <img src="https://cdn.discordapp.com/avatars/906196365460258906/0cad9f7c734e5471169c49deabb050b7.png" id="avatar" alt="Avatar Discord">
-        <h1>.riviox</h1>
-        <p>A human, homo sapiens.</p>
-        <p>Nationality - Poland</p>
-        <p>Python developer</p>
-        <h1><i class="bi bi-github"></i> Github</h1>
-        <p>My Github - <a href="https://github.com/RivioxGaming">RivioxGaming</a></p>
-        <p>GalaxyFPS - <a href="https://github.com/RivioxGaming/GalaxyFPS">RivioxGaming/GalaxyFPS</a></p>
-        <h1><i class="bi bi-discord"></i> Discord</h1>
-        <p><a href="https://discord.gg/YqM85c5K">Riviox's Community</a></p>
-        <p><a href="https://discord.gg/zZyfZnNh">GalaxyFPS</a></p>
-        <h1><i class="bi bi-code-slash"></i> Other projects</h1>
-        <p><a href="./webhook/index.html">Webhook Tools</a></p>
+<body>
+    <div id="tsparticles"></div>
+    <div id="content">
+        <h1>riviox</h1>
+        <p>Python developer from Poland.</p>
+        <div id="social-links">
+            <a href="https://github.com/riviox" target="_blank">GitHub</a>
+            <a href="https://youtube.com/@riviox" target="_blank">YouTube</a>
+            <a href="https://discord.gg/5uvx2RXsfJ" target="_blank">Discord</a>
+            <a href="https://www.patreon.com/Riviox" target="_blank">Patreon</a>
+        </div>
+        <h2>My Top 5 Projects</h2>
+        <ul id="projects-list"></ul>
     </div>
-    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3.0.0/tsparticles.preset.links.bundle.min.js"></script>
+    <script src="assets/script.js"></script>
 </body>
+
 </html>
