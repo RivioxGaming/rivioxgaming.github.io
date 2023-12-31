@@ -1,5 +1,3 @@
-// assets/script.js
-
 async function fetchPinnedRepositories(username) {
     const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&direction=desc`);
     
@@ -59,3 +57,21 @@ document.onkeydown = (e) => {
     await tsParticles.load({ id: "tsparticles", options: { preset: "links" } });
     await loadProjects();
 })();
+
+async function fetchDiscordInfo() {
+    const discordApiUrl = 'https://discordlookup.mesavirep.xyz/v1/user/1183356609448124489';
+
+    try {
+        const response = await fetch(discordApiUrl);
+        const data = await response.json();
+
+        // Update HTML content with Discord information
+        document.getElementById('discord-tag').innerText = `${data.tag}`;
+        document.getElementById('discord-avatar').src = data.avatar.link;
+        document.getElementById('discord-banner').src = data.banner.link;
+    } catch (error) {
+        console.error('Error fetching Discord data:', error);
+    }
+}
+
+fetchDiscordInfo();

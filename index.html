@@ -3,21 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta property="og:title" content="riviox - About Me">
+    <meta property="og:description" content="Discord profile of riviox, a Python developer from Poland.">
+    <meta property="og:image" content="https://cdn.discordapp.com/avatars/1183356609448124489/0c08b51ecfb22ee9e94336d7670fe0ec">
+    <meta property="og:url" content="https://riviox.is-a.dev">
+    <meta property="og:type" content="profile">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>riviox - About Me</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <title>riviox - Discord Profile</title>
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 
 <body>
     <div id="tsparticles"></div>
-    <div id="content">
-        <h1>riviox</h1>
-        <p>Python developer from Poland.</p>
-        <div id="social-links">
-            <a href="https://github.com/riviox" target="_blank">GitHub</a>
-            <a href="https://youtube.com/@riviox" target="_blank">YouTube</a>
-            <a href="https://discord.gg/5uvx2RXsfJ" target="_blank">Discord</a>
-            <a href="https://www.patreon.com/Riviox" target="_blank">Patreon</a>
+    <div id="content" class="discord-profile">
+        <div class="profile-header">
+            <img id="discord-banner" alt="Discord Banner">
+            <img id="discord-avatar" alt="Discord Avatar">
+        </div>
+        <div class="profile-info">
+            <b><div id="discord-tag"></div></b>
+            <p class="bio">Python developer from Poland.</p>
+        </div>
+        <div id="social-links" class="discord-social-links">
+            <a href="https://github.com/riviox" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="https://youtube.com/@riviox" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://discord.gg/5uvx2RXsfJ" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+            <a href="https://www.patreon.com/Riviox" target="_blank"><i class="fab fa-patreon"></i> Patreon</a>
         </div>
         <h2>My Top 5 Projects</h2>
         <ul id="projects-list"></ul>
