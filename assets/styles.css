@@ -74,10 +74,17 @@ body {
 #projects-list {
     list-style: none;
     padding: 0;
+    overflow-x: auto;
+    max-height: 200px;
+    white-space: nowrap;
+}
+
+#projects-container {
+    display: flex;
 }
 
 #projects-list li {
-    margin: 20px 0;
+    margin: 20px;
     background-color: #444;
     padding: 20px;
     border-radius: 12px;
@@ -108,4 +115,41 @@ body {
 #projects-list p {
     margin-top: 10px;
     color: #888;
+}
+
+#fade {
+    background-color: #24272b;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: end;
+    background-color: rgb(39, 42, 46);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+footer a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #206694;
+}
+
+@media only screen and (max-width: 600px) {
+    #content.discord-profile {
+        width: 90%;
+    }
+
+    #discord-avatar {
+        margin-left: 0;
+    }
+
+    .profile-info {
+        margin-left: 0;
+    }
 }

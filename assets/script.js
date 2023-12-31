@@ -17,23 +17,30 @@ async function fetchPinnedRepositories(username) {
 async function loadProjects() {
     const username = "riviox";
     const projectsList = document.getElementById("projects-list");
-    
+
     try {
         const repositories = await fetchPinnedRepositories(username);
 
-        repositories.slice(0, 5).forEach((repo) => {
+        const projectsContainer = document.createElement("div");
+        projectsContainer.classList.add("projects-container");
+
+        repositories.forEach((repo) => {
             const listItem = document.createElement("li");
             const link = document.createElement("a");
             link.href = repo.html_url;
             link.target = "_blank";
             link.textContent = repo.name;
             listItem.appendChild(link);
-            projectsList.appendChild(listItem);
+            projectsContainer.appendChild(listItem);
         });
+
+        projectsList.appendChild(projectsContainer);
     } catch (error) {
         console.error("Error fetching GitHub data:", error);
     }
 }
+
+
 
 document.addEventListener('contextmenu', (e) => e.preventDefault());
 
@@ -65,7 +72,8 @@ async function fetchDiscordInfo() {
         const response = await fetch(discordApiUrl);
         const data = await response.json();
 
-        document.getElementById('discord-tag').innerText = `${data.tag}`;
+        const tag = data.tag.endsWith('#0') ? data.tag.slice(0, -2) : data.tag;
+        document.getElementById('discord-tag').innerText = tag;
         document.getElementById('discord-avatar').src = data.avatar.link;
         document.getElementById('discord-banner').src = data.banner.link;
     } catch (error) {
