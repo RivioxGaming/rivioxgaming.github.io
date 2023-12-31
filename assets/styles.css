@@ -25,17 +25,6 @@ body {
     text-align: left;
 }
 
-#webhook a {
-    background-color: #3d3d3d;
-    padding: 5px;
-    border-radius: 5px;
-    color: #34acfc;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-    display: inline-flex;
-    align-items: center;
-}
 
 #discord-banner {
     width: 100%;
@@ -164,4 +153,16 @@ footer a:hover {
     .profile-info {
         margin-left: 0;
     }
+}
+
+#webhook a {
+    background-color: #3d3d3d;
+    padding: 5px;
+    border-radius: 5px;
+    color: #34acfc;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
 }
