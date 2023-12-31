@@ -124,9 +124,12 @@ body {
     border-radius: 10px;
 }
 
+li {
+    list-style: none;
+}
+
 footer {
     margin-top: 10px;
-    text-align: end;
     background-color: rgb(39, 42, 46);
     padding: 15px;
     border-radius: 10px;
