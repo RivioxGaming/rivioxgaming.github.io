@@ -59,6 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    let linksWindow = document.getElementById('skills');
+    let myProjectsLink = document.getElementById('skillsshow');
+
+    myProjectsLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        linksWindow.style.display = 'block';
+    });
+});
+
 function hideWindow(windowId) {
     let windowElement = document.getElementById(windowId);
     if (windowElement) {

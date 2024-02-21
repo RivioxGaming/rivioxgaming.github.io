@@ -26,6 +26,21 @@ body {
     display: none;
 }
 
+#skills {
+    display: none;
+}
+
+#icon img {
+    height: 50px;
+    background-color: rgba(44, 44, 44, 0.5);
+    padding: 5px;
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    border: 2px;
+    border-color: rgba(0, 255, 255, 0.445);
+    border-style: solid;
+}
+
 .window {
     background-color: rgba(0, 0, 0, 0.1);
     width: fit-content;
