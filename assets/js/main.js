@@ -86,8 +86,7 @@ async function fetchRepos() {
 
 async function displayRepos() {
     const repos = await fetchRepos();
-    const linksContainer = document.getElementById('links');
-
+    const linksContainer = document.getElementById('repos');
     const projectsList = document.createElement('ul');
     projectsList.innerHTML = '<h2>My Repos:</h2>';
 
@@ -102,6 +101,5 @@ async function displayRepos() {
 
     linksContainer.appendChild(projectsList);
 }
-
 
 document.addEventListener('DOMContentLoaded', displayRepos);
