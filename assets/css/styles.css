@@ -23,6 +23,7 @@ body {
 
 #rpc {
     top: 60%;
+    display: none;
 }
 
 .window {
