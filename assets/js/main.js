@@ -1,3 +1,4 @@
+// Window system
 let isDragging = false;
 let initialX;
 let initialY;
@@ -75,3 +76,32 @@ function hideWindow(windowId) {
         windowElement.style.display = 'none';
     }
 }
+
+// Github API
+async function fetchRepos() {
+    const response = await fetch(`https://api.github.com/users/riviox/repos`);
+    const data = await response.json();
+    return data;
+}
+
+async function displayRepos() {
+    const repos = await fetchRepos();
+    const linksContainer = document.getElementById('links');
+
+    const projectsList = document.createElement('ul');
+    projectsList.innerHTML = '<h2>My Repos:</h2>';
+
+    repos.forEach(repo => {
+        const listItem = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = repo.html_url;
+        link.textContent = repo.name;
+        listItem.appendChild(link);
+        projectsList.appendChild(listItem);
+    });
+
+    linksContainer.appendChild(projectsList);
+}
+
+
+document.addEventListener('DOMContentLoaded', displayRepos);

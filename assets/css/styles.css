@@ -120,3 +120,26 @@ a:hover {
 #links a {
     color: rgb(43, 168, 226);
 }
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: medium;
+    }
+
+    .window {
+        margin: 1rem;
+    }
+
+    #icon img {
+        height: 40px;
+    }
+
+    .nav {
+        flex-direction: row; 
+        margin-top: 0; 
+    }
+
+    #links {
+        top: 50vh;
+    }
+}
