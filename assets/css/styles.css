@@ -17,6 +17,14 @@ body {
     color: white;
 }
 
+#pfp {
+    height: 50px;
+    border-radius: 1.5rem;
+}
+
+#rpc {
+    top: 60%;
+}
 
 .window {
     background-color: rgba(0, 0, 0, 0.1);
@@ -68,10 +76,12 @@ body {
     background-color: rgba(0, 0, 0, 0.4);
     padding: 5px;
     width: 100%;
+    flex-direction: column;
 }
 
 ul {
     list-style: none;
+    margin-top: 50%;
     margin: 0;
     padding: 0;
 }
