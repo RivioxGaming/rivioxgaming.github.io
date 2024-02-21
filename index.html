@@ -1,48 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="riviox - About Me">
-    <meta property="og:description" content="Python developer from Poland.">
-    <meta property="og:image" content="https://cdn.discordapp.com/avatars/1183356609448124489/0c08b51ecfb22ee9e94336d7670fe0ec">
-    <meta property="og:url" content="https://riviox.is-a.dev">
-    <meta property="og:type" content="profile">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <title>riviox - Discord Profile</title>
-    <link rel="stylesheet" href="assets/styles.css">
+    <title>riviox</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <div id="tsparticles"></div>
-    <div id="content" class="discord-profile">
-        <div class="profile-header">
-            <img id="discord-banner" alt="Discord Banner">
-            <img id="discord-avatar" alt="Discord Avatar">
-        </div>
-        <div id="fade">
-            <div class="profile-info">
-                <b><div id="discord-tag"></div></b>
-                <p class="bio">Python developer from Poland.</p>
-            </div>
-            <div id="social-links" class="discord-social-links">
-                <a href="https://github.com/riviox" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://youtube.com/@riviox" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-                <a href="https://discord.gg/5uvx2RXsfJ" target="_blank"><i class="fab fa-discord"></i> Discord</a>
-                <a href="https://www.patreon.com/Riviox" target="_blank"><i class="fab fa-patreon"></i> Patreon</a>
-            </div>
-            <h2>My GitHub repos</h2>
-            <ul id="projects-list"></ul>
-            <ul id="webhook"><a href="webhook/index.html">Webhook tools</a></ul>
-            <footer>
-                <tr>
-                    <li>This website is licensed under The 3-clause BSD <a href="LICENSE.txt" target="_blank" rel="noopener noreferrer">License</a></li>
-                    <li>This website uses <a href="https://github.com/mesalytic/discord-lookup-api/tree/main">discord-lookup-api</a> by <a href="https://github.com/mesalytic">mesalytic</a></li>
-                </tr>
-            </footer>
+    <div class="nav">
+        <ul>
+            <li><a href="#">Discord</a></li>
+            <li><a href="https://reddit.com/u/rivioxx">Reddit</a></li>
+            <li><a href="#" id="navprojects">My Projects</a></li>
+            <li><a href="#" id="neofetchshow">My Neofetch</a></li>
+        </ul>
+    </div>
+    <div class="window" id="terminal">
+        <i class="hide-button" onclick="hideWindow('terminal')">x</i>
+        <div class="content">
+            <pre id="neofetch">
+<font color="#33DA7A">riviox</font>@arch <font color="#73D0FF">~</font> 
+<font color="#33DA7A">❯ </font><font color="#5CCFE6">neofetch</font>
+<font color="#2AA1B3"><b>                   -`</b></font>                     
+<font color="#2AA1B3"><b>                  .o+`</b></font>                    
+<font color="#2AA1B3"><b>                 `ooo/</b></font>                    
+<font color="#2AA1B3"><b>                `+oooo:</b></font>                  <font color="#2AA1B3"><b>         USER</b></font>: <font color="#2AA1B3"><b>riviox</b></font>@<font color="#2AA1B3"><b>arch</b></font> 
+<font color="#2AA1B3"><b>               `+oooooo:</b></font>                 <b>┌───────────────────────────────┐</b> 
+<font color="#2AA1B3"><b>               -+oooooo+:</b></font>                <font color="#2AA1B3"><b> ​ OS</b></font>: Arch Linux x86_64 
+<font color="#2AA1B3"><b>             `/:-:++oooo+:</b></font>               <font color="#2AA1B3"><b> ​ Kernel</b></font>: 6.6.11-hardened1-1-hardened 
+<font color="#2AA1B3"><b>            `/++++/+++++++:</b></font>              <font color="#2AA1B3"><b> ​ Uptime</b></font>: 1 hour, 31 mins 
+<font color="#2AA1B3"><b>           `/++++++++++++++:</b></font>             <font color="#2AA1B3"><b> ​ Packages</b></font>: 1388 (pacman), 14 (flatpak), 2 (snap)
+<font color="#2AA1B3"><b>          `/+++ooooooooooooo/`</b></font>           <font color="#2AA1B3"><b> ​ Shell</b></font>: fish 3.7.0 
+<font color="#2AA1B3"><b>         ./ooosssso++osssssso+`</b></font>          <font color="#2AA1B3"><b> ​ DE</b></font>: Hyprland 
+<font color="#2AA1B3"><b>        .oossssso-````/ossssss+`</b></font>         <font color="#2AA1B3"><b> ​ Memory</b></font>: 1034MiB / 7893MiB 
+<font color="#2AA1B3"><b>       -osssssso.      :ssssssso.</b></font>        <b>└───────────────────────────────┘</b> 
+<font color="#2AA1B3"><b>      :osssssss/        osssso+++.</b></font>        
+<font color="#2AA1B3"><b>     /ossssssss/        +ssssooo/-</b></font>       <b>         </b>⬤ <font color="#D0CFCC"><b>⬤ </b></font><font color="#2AA1B3"><b>⬤ </b></font><font color="#A347BA"><b>⬤ </b></font><font color="#12488B"><b>⬤ </b></font><font color="#A2734C"><b>⬤ </b></font><font color="#26A269"><b>⬤ </b></font><font color="#C01C28"><b>⬤</b></font> 
+<font color="#2AA1B3"><b>   `/ossssso+/:-        -:/+osssso+-</b></font>
+<font color="#2AA1B3"><b>  `+sso+:-`                 `.-/+oso:</b></font>
+<font color="#2AA1B3"><b> `++:.                           `-/+/</b></font>
+<font color="#2AA1B3"><b> .`                                 `/</b></font>
+
+<font color="#33DA7A">riviox</font>@arch <font color="#73D0FF">~</font> 
+<font color="#33DA7A">❯ </font>
+</pre>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-links@3.0.0/tsparticles.preset.links.bundle.min.js"></script>
-    <script src="assets/script.js"></script>
+    <div class="window" id="links">
+        <i class="hide-button" onclick="hideWindow('links')">x</i>
+<font color="#33DA7A">riviox</font>@arch <font color="#73D0FF">~</font><br>
+<font color="#33DA7A">❯ </font><font color="#5CCFE6">Projects</font>
+        <ul>
+            <li>
+                <h2>My projects:</h2>
+            </li>
+            <li>
+                <a href="">GitMan</a>
+            </li>
+            <li>
+                <a href="">FalloutOS</a>
+            </li>
+        </ul>
+    </div>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
