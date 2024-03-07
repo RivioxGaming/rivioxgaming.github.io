@@ -1,3 +1,7 @@
+:root {
+    --accent: rgb(41, 41, 41);
+}
+
 html {
     margin: 0;
 }
@@ -8,9 +12,9 @@ body {
     height: 100vh;
     width: 100vw;
     background-color: #131020;
-    background-image: url(/assets/img/bg.png);
+    background-image: url(/assets/img/bg.gif);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     overflow: hidden;
     font-family: monospace;
     font-size: large;
@@ -21,9 +25,10 @@ body {
 #pfp {
     border-radius: 2rem;
     border: 2px;
-    border-color: rgba(0, 255, 255, 0.445);
+    border-color: var(--accent);
     border-style: solid;
     margin-right: 1.5rem;
+    height: 50px;
 }
 
 #rpc {
@@ -47,7 +52,7 @@ body {
     border-radius: 1rem;
     backdrop-filter: blur(5px);
     border: 2px;
-    border-color: rgba(0, 255, 255, 0.445);
+    border-color: var(--accent);
     border-style: solid;
 }
 
@@ -57,7 +62,7 @@ body {
     padding: 15px;
     border-radius: 1.1rem;
     border: 3px;
-    border-color: rgba(0, 255, 255, 0.445);
+    border-color: var(--accent);
     border-style: solid;
     backdrop-filter: blur(5px);
     margin: 1.5rem;
@@ -107,28 +112,6 @@ body {
     width: 100%;
 }
 
-.centertext {
-    text-align: center;
-    position: absolute;
-    font-size: x-large;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.3);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
-
 ul {
     list-style: none;
     margin: 0;
@@ -152,11 +135,11 @@ a {
 }
 
 a:hover {
-    color: cyan;
+    color: var(--accent);
 }
 
 #links a {
-    color: rgb(43, 168, 226);
+    color: var(--accent);
 }
 
 @media screen and (max-width: 768px) {
