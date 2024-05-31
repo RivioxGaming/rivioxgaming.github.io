@@ -20,6 +20,10 @@ body {
     #info {
       display: flex;
       flex-direction: column;
+      a {
+        color: $color;
+        text-decoration: none;
+      }
     }
     .btns {
       padding-top: 2vh;

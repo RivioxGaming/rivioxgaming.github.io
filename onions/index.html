@@ -1,0 +1,42 @@
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="description" content="my website or smth"/>
+    <meta name="keywords" content="riviox, hack, tor, onion, code, dark web, darkweb"/>
+    <meta name="author" content="Twój autor"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <title>riviox</title>
+    <script src="https://cdn.jsdelivr.net/npm/emoji-toolkit@8.0.0/lib/js/joypixels.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/emoji-toolkit@8.0.0/extras/css/joypixels.min.css"/>
+    <link rel="stylesheet" href="../style.css"/>
+  </head>
+  <body>
+    <div class="main">
+      <h1>riviox/onions</h1>
+      <div id="info">
+        <txt> <span>
+            Useful
+            <a href="https://www.torproject.org/download/"> :onion: .onion :onion:</a>
+            websites</span></txt>
+      </div>
+      <h2>Search</h2>
+      <div class="btns"> <a href="https://3g2upl4pq6kufc4m.onion/">DuckDuckGo </a><a href="http://msydqstlz2kzerdg.onion/">Ahmia</a><a href="http://haystak5njsmn2hqkewecpaxetahtwhsbsa64jom2k22z5afxhnpxfid.onion/">Haystak </a></div>
+      <h2>Browse</h2>
+      <div class="btns"> <a href="http://4wbwa6vcpvcr3vvf4qkhppgy56urmjcj2vagu2iqgp3z656xcmfdbiqd.onion/">fuck facebook</a><a href="http://rougmnvswfsmd4dq.onion/">Tor Metrics</a><a href="http://6nhmgdpnyoljh5uzr5kwlatx2u3diou4ldeommfxjz3wkhalzgjqxzqd.onion/">The Hidden Wiki </a></div>
+      <h2>Share</h2>
+      <div class="btns"> <a href="http://zerobinqmdqd236y.onion/">ZeroBin </a><a href="http://enxx3byspwsdo446jujc52ucy2pf5urdbhqw3kbsfhlfjwmbpj5smdad.onion/">Endchan</a></div>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script>
+    $(document).ready(function() {
+    	$(".main").each(function() {
+    		var original = $(this).html();
+    		var converted = joypixels.toImage(original);
+    		$(this).html(converted);
+    	});
+    });
+  </script>
+</html>

@@ -1,0 +1,44 @@
+html(lang='en')
+	head
+		meta(charset='UTF-8')
+		meta(name='description', content='my website or smth')
+		meta(name='keywords', content='riviox, hack, tor, onion, code, dark web, darkweb')
+		meta(name='author', content='Twój autor')
+		meta(name='viewport', content='width=device-width,initial-scale=1')
+		title riviox
+		script(src="https://cdn.jsdelivr.net/npm/emoji-toolkit@8.0.0/lib/js/joypixels.min.js")
+		script(src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous")
+		link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/emoji-toolkit@8.0.0/extras/css/joypixels.min.css")
+		link(rel="stylesheet", href="../style.css")
+	body
+		.main
+			h1 riviox/onions
+			#info
+				txt 
+					span.
+						Useful
+						#[a(href="https://www.torproject.org/download/")  :onion: .onion :onion:]
+						websites
+			h2 Search
+			.btns 
+				a(href="https://3g2upl4pq6kufc4m.onion/") DuckDuckGo 
+				a(href="http://msydqstlz2kzerdg.onion/") Ahmia
+				a(href="http://haystak5njsmn2hqkewecpaxetahtwhsbsa64jom2k22z5afxhnpxfid.onion/") Haystak 
+			h2 Browse
+			.btns 
+				a(href="http://4wbwa6vcpvcr3vvf4qkhppgy56urmjcj2vagu2iqgp3z656xcmfdbiqd.onion/") fuck facebook
+				a(href="http://rougmnvswfsmd4dq.onion/") Tor Metrics
+				a(href="http://6nhmgdpnyoljh5uzr5kwlatx2u3diou4ldeommfxjz3wkhalzgjqxzqd.onion/") The Hidden Wiki 
+			h2 Share
+			.btns 
+				a(href="http://zerobinqmdqd236y.onion/") ZeroBin 
+				a(href="http://enxx3byspwsdo446jujc52ucy2pf5urdbhqw3kbsfhlfjwmbpj5smdad.onion/") Endchan
+	script(src='script.js')
+	script.
+		$(document).ready(function() {
+			$(".main").each(function() {
+				var original = $(this).html();
+				var converted = joypixels.toImage(original);
+				$(this).html(converted);
+			});
+		});

@@ -16,6 +16,10 @@ body .main #info {
   display: flex;
   flex-direction: column;
 }
+body .main #info a {
+  color: #493494;
+  text-decoration: none;
+}
 body .main .btns {
   padding-top: 2vh;
 }
