@@ -1,1 +1,0 @@
-# collection of my wallpapers or smth
