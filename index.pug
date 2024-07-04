@@ -10,6 +10,11 @@ html(lang='en')
 		script(src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous")
 		link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/emoji-toolkit@8.0.0/extras/css/joypixels.min.css")
 		link(rel="stylesheet", href="style.css")
+		script.
+			const img = document.getElementById('discord-avatar');
+			function updateImage() {
+				img.src = "https://lanyard.cnrad.dev/api/1200520669570539620?" + new Date().getTime();
+			}
 	body
 		.main
 			h1 riviox
@@ -28,7 +33,6 @@ html(lang='en')
 				a(href="https://discordapp.com/users/1200520669570539620") discord
 				a(href="https://github.com/riviox") github
 				a(href="https://riviox.is-a.dev/onions") .onion links 
-	script(src='script.js')
 	script.
 		$(document).ready(function() {
 			$(".main").each(function() {
