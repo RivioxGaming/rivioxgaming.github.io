@@ -1,8 +1,8 @@
-$bg: rgb(0, 0, 0);
-$text: rgb(168, 168, 168);
+$bg: #E8B0B4;
+$text: #ffff;
 $fontsize: 18px;
 $font: 'Cascadia Code', monospace;
-$color: rgb(73, 52, 148);
+$color: #D09AA1;
 
 body {
   background-color: $bg;
@@ -18,17 +18,29 @@ body {
     padding-top: 3vh;
     text-align: center;
     #info {
-      display: flex;
-      flex-direction: column;
       a {
         color: $color;
         text-decoration: none;
       }
+      #bio {
+        background-color: $color;
+        padding: 5px;
+        border-radius: 5px;
+      }
+    }
+    #discord {
+      margin: 15px;
+      background-color: $color;
+      border-radius: 5px;
+    }
+    #avatar {
+      border-radius: 15px;
+      height: 25%;
     }
     .btns {
       padding-top: 2vh;
       a {
-        color: inherit; 
+        color: inherit;
         text-decoration: none;
         background-color: $color;
         padding: 10px;
