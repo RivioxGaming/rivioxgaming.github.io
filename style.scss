@@ -1,8 +1,8 @@
-$bg: #E8B0B4;
+$bg: #101214;
 $text: #ffff;
 $fontsize: 18px;
 $font: 'Cascadia Code', monospace;
-$color: #D09AA1;
+$color: #1A1C1F;
 
 body {
   background-color: $bg;
@@ -51,6 +51,12 @@ body {
     }
     h1 {
       color: $color;
+    }
+    #pl1 {
+      color: white;
+    }
+    #pl2 {
+      color: red;
     }
   }
 }
