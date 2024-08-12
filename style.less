@@ -1,60 +1,68 @@
-$bg: #101214;
-$text: #ffff;
-$fontsize: 18px;
-$font: 'Cascadia Code', monospace;
-$color: #1A1C1F;
+@bg: #101214;
+@text: #ffff;
+@fontsize: 18px;
+@font: 'Cascadia Code', monospace;
+@color: #5c545e;
 
 body {
-  background-color: $bg;
-  color: $text;
-  font-size: $fontsize;
+  background-color: @bg;
+  color: @text;
+  font-size: @fontsize;
   margin: 0;
   padding: 0;
-  font-family: $font;
+  font-family: @font;
   width: 100%;
-  
+
   .main {
     width: 100%;
     padding-top: 3vh;
     text-align: center;
+
+    h1 {
+      color: @color;
+    }
+
     #info {
       a {
-        color: $color;
+        color: @color;
         text-decoration: none;
       }
+
       #bio {
-        background-color: $color;
+        background-color: @color;
         padding: 5px;
         border-radius: 5px;
       }
     }
+
     #discord {
       margin: 15px;
-      background-color: $color;
       border-radius: 5px;
     }
+
     #avatar {
       border-radius: 15px;
       height: 25%;
     }
+
     .btns {
       padding-top: 2vh;
+
       a {
         color: inherit;
         text-decoration: none;
-        background-color: $color;
+        background-color: @color;
         padding: 10px;
         margin: 5px;
         display: inline-block;
         border-radius: 4px;
       }
     }
-    h1 {
-      color: $color;
-    }
+
     #pl1 {
       color: white;
     }
+
     #pl2 {
       color: red;
     }
