@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-git clone https://github.com/riviox/flash
+git clone https://github.com/szczotapl/flash
 cd flash
 bash install.sh
 cd ..
